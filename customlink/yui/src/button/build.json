@@ -1,0 +1,10 @@
+{
+  "name": "moodle-atto_customlink-button",
+  "builds": {
+    "moodle-atto_customlink-button": {
+      "jsfiles": [
+        "button.js"
+      ]
+    }
+  }
+}
