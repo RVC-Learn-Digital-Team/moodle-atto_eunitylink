@@ -1,5 +1,5 @@
 {
-    "moodle-atto_customlink-button": {
+    "moodle-atto_eunitylink-button": {
         "requires": [
             "moodle-editor_atto-plugin"
         ]

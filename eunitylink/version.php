@@ -14,17 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Atto customlink button plugin version file.
+ * Atto enunitylink button plugin version file.
  *
- * @package    atto_customlink
+ * @package    atto_eunitylink
  * @copyright  2020 Titus Learning by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2020020400;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2020021700;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2018112800;        // Requires at least this Moodle version.
-$plugin->component = 'atto_customlink';  // Full name of the plugin (used for diagnostics).
+$plugin->component = 'atto_eunitylink';  // Full name of the plugin (used for diagnostics).
 $plugin->maturity = MATURITY_BETA;
 $plugin->dependencies = ['local_linkproxy' => ANY_VERSION];

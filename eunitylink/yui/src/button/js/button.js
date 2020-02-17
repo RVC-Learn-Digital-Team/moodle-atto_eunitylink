@@ -1,5 +1,3 @@
-YUI.add('moodle-atto_customlink-button', function (Y, NAME) {
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,24 +13,24 @@ YUI.add('moodle-atto_customlink-button', function (Y, NAME) {
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /*
- * @package    atto_customlink
+ * @package    atto_eunitylink
  * @copyright  Titus Learning 2019 by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * @module moodle-atto_customlink-button
+ * @module moodle-atto_eunitylink-button
  */
 
 /**
- * Atto  customlink plugin.
+ * Atto enunitylink plugin.
  *
- * @namespace M.atto_customlink
+ * @namespace M.atto_eunitylink
  * @class button
  * @extends M.editor_atto.EditorPlugin
  */
 
-var COMPONENTNAME = 'atto_customlink',
+var COMPONENTNAME = 'atto_eunitylink',
     CSS = {
         LINKTEXT: 'linktext',
         ACCESSIONNUMBER: 'accessionnumber'
@@ -48,7 +46,7 @@ var COMPONENTNAME = 'atto_customlink',
                         '<label for="{{CSS.ACCESSIONNUMBER}}">' +
                             '{{get_string "accessionnumber" component}}</label>' +
                             '<input class="form-control fullwidth {{CSS.ACCESSIONNUMBER}}"' +
-                            ' name="{{CSS.ACCESSIONNUMBER}}" id="{{CSS.ACCESSIONNUMBER}}"' +
+                            ' name="{{CSS.ACCESSIONNUMBER}}" id="{{CSS.ACCESSIONNUMBER}}" type="text"' +
                             ' value="{{accessionnumber}}" size="32"/>' +
                   '</div>' +
                 '<div class="mdl-align">' +
@@ -57,7 +55,7 @@ var COMPONENTNAME = 'atto_customlink',
                     ' class="btn btn-default submit">{{get_string "createlink" component}}</button>' +
                 '</div>' +
             '</form>';
-        Y.namespace('M.atto_customlink').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
+        Y.namespace('M.atto_eunitylink').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
 
         /**
          * A reference to the current selection at the time that the dialogue
@@ -98,9 +96,15 @@ var COMPONENTNAME = 'atto_customlink',
         if (this.get('disabled')) {
             return;
         }
+
+        // Set name of button icon to be loaded.
+        var icon = 'iconone';
+
         this.addButton({
             tags: 'IL, strong',
-            icon: 'e/insert',
+            icon: 'ed/' + icon,
+            iconComponent: 'atto_eunitylink',
+            buttonName: icon,
             exec: 'ilink',
             callback: this._displayDialogue
         });
@@ -377,6 +381,3 @@ var COMPONENTNAME = 'atto_customlink',
 
         }
     });
-
-
-}, '@VERSION@', {"requires": ["moodle-editor_atto-plugin"]});

@@ -15,14 +15,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Privacy Subsystem implementation for atto_customlink.
+ * Privacy Subsystem implementation for atto_eunitylink.
  *
- * @package    atto_customlink
+ * @package    atto_eunitylink
  * @copyright  2019 Titus Learning by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace atto_customlink\privacy;
+namespace atto_eunitylink\privacy;
 
 defined('MOODLE_INTERNAL') || die();
 

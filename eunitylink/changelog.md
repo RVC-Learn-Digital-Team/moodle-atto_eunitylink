@@ -11,4 +11,5 @@ Installed.
 ### Edit existing links.
 Selecting an existing link will now bring up the editing  dialog populated with current values that can be modified.
 
-
+### Rename to eunitylink and use icon for button
+Renamed plugin to eunitylink and also use a button for icon rather than a +

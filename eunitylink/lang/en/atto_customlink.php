@@ -14,23 +14,22 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Strings for component 'atto_imagelink', language 'en'.
+ * Strings for component 'atto_eunitylink', language 'en'.
  *
- * @package    atto_imagelink
+ * @package    atto_eunitylink
  * @copyright  2019 Titys Learning by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Customlink';
-$string['dialogtitle'] = 'Customlink';
-$string['privacy:metadata'] = 'The atto_customlink plugin does not store any personal data.';
+$string['pluginname'] = 'EUnitylink';
+$string['dialogtitle'] = 'Insert an eUnity link';
+$string['privacy:metadata'] = 'The atto_eunitylink plugin does not store any personal data.';
 $string['createlink'] = 'Create link';
 $string['linktext'] = 'Link text';
-$string['medicalrecord'] = 'Medical Records id/Patient id';
 $string['accessionnumber'] = 'Accession number';
 $string['enterlinktext'] = 'Enter link text';
 $string['hosturl'] = 'Host';
 $string['hosturl_text'] = 'Host for images';
-$string['settings'] = 'Atto Customlink settings';
+$string['settings'] = 'Atto EUnitylink settings';
 $string['queryparams'] = 'Query parameters';
 $string['queryparams_text'] = 'Parameters appended to the URL with data';

@@ -16,7 +16,7 @@
 /**
  * Atto text editor integration version file.
  *
- * @package    atto_customlink
+ * @package    atto_eunitylink
  * @copyright  Titus Learning by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,23 +27,22 @@ defined('MOODLE_INTERNAL') || die();
  * Initialise this plugin
  * @param string $elementid
  */
-function atto_customlink_strings_for_js() {
+function atto_eunitylink_strings_for_js() {
     global $PAGE;
 
     $PAGE->requires->strings_for_js([
         'dialogtitle',
         'createlink',
         'linktext',
-        'medicalrecord',
         'accessionnumber'
-    ], 'atto_customlink');
+    ], 'atto_eunitylink');
 }
 
 /**
  * Return the js params required for this module.
  * @return array of additional params to pass to javascript init function for this module.
  */
-function atto_customlink_params_for_js() {
+function atto_eunitylink_params_for_js() {
     global $COURSE;
     $coursecontext = context_course::instance($COURSE->id);
     $disabled = false;
@@ -51,7 +50,7 @@ function atto_customlink_params_for_js() {
         $disabled = true;
     }
     $params['disabled'] = $disabled;
-    $params['hosturl'] = get_config('atto_customlink', 'hosturl');
-    $params['queryparams'] = get_config('atto_customlink', 'queryparams');
+    $params['hosturl'] = get_config('atto_eunitylink', 'hosturl');
+    $params['queryparams'] = get_config('atto_eunitylink', 'queryparams');
     return $params;
 }
