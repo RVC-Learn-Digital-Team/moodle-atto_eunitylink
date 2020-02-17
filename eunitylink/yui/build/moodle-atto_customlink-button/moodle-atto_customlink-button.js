@@ -98,9 +98,13 @@ var COMPONENTNAME = 'atto_eunitylink',
         if (this.get('disabled')) {
             return;
         }
+        // Set name of button icon to be loaded.
+        var icon = 'iconone';
         this.addButton({
             tags: 'IL, strong',
-            icon: 'e/insert',
+            icon: 'ed/' + icon,
+            iconComponent: 'atto_eunitylink',
+            buttonName: icon,
             exec: 'ilink',
             callback: this._displayDialogue
         });
