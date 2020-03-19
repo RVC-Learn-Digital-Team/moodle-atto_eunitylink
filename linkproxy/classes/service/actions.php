@@ -36,27 +36,48 @@ class actions {
         $proxy = new proxy();
         $an = required_param('an', PARAM_TEXT);
 
-        return $proxy->create_link($mr, $an);
+        return  $proxy->upsert_link($an);
     }
 
+    /**
+     * Get hash data from db table
+     * Called via Ajax when customlink
+     * is clicked in atto text area.
+     *
+     * @return \stdClass
+     */
     public static function get_dbvals() {
         $proxy = new proxy();
         $hash = required_param('hash', PARAM_TEXT);
         $result = $proxy->get_dbvals($hash);
+
         return $result;
     }
+
+    /**
+     * update or insert new link into hash
+     * table.
+     *  @return \stdClass
+     */
     public static function upsert_link() {
         $proxy = new proxy();
         $linkhash = optional_param('hash', '', PARAM_TEXT);
         $an = required_param('an', PARAM_TEXT);
-        $hash = $proxy->upsert_link($linkhash, $an);
+        $hash = $proxy->upsert_link($an, $linkhash);
+
         return $hash;
     }
-
+  /**
+   * Get existing link based on hash from
+   * url then redirect to a a new tab
+   * showing the eUnity viewer
+   *
+   * @return void
+   */
     public static function get_link() {
         $proxy = new proxy();
         $hash = required_param('hash', PARAM_TEXT);
-        $proxy->get_redirect($hash);
 
+        $proxy->get_redirect($hash);
     }
 }

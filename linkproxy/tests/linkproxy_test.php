@@ -29,10 +29,12 @@ defined('MOODLE_INTERNAL') || die();
  * The linkproxy_test test class.
  *
  * @package    local_linkproxy
- * @copyright  2019 Marcus Green <marcusgreen@tituslearning.com>
+ * @copyright  Titus Learning 2020 by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class local_linkproxy_linkproxy_test_ extends advanced_testcase {
+
+    // Populated in setup.
     private $linkrecord = null;
     public function test_upsert_link() {
         $this->resetAfterTest();
@@ -42,7 +44,7 @@ class local_linkproxy_linkproxy_test_ extends advanced_testcase {
         $accessionnumber = '2';
 
         // Check link creation.
-        $linkhash = $proxy->upsert_link('', $accessionnumber);
+        $linkhash = $proxy->upsert_link($accessionnumber);
         $this->assertInternalType('string', $linkhash, 'hashedlink is not a string');
         $linkrecord = $DB->get_record('local_linkproxy', ['linkhash' => $linkhash]);
         $this->assertEquals($linkhash, $linkrecord->linkhash);
@@ -50,7 +52,7 @@ class local_linkproxy_linkproxy_test_ extends advanced_testcase {
 
         // Check link update.
         $accessionnumber = '200';
-        $linkhash = $proxy->upsert_link($linkhash, $accessionnumber);
+        $linkhash = $proxy->upsert_link($accessionnumber, $linkhash);
         $dbvals = $proxy->get_dbvals($linkhash);
         $this->assertEquals($accessionnumber, $dbvals->accessionnumber);
 
@@ -89,13 +91,18 @@ class local_linkproxy_linkproxy_test_ extends advanced_testcase {
         $this->assertEquals($dbvals->linkhash, $this->linkrecord->linkhash);
     }
 
-
+    /**
+     * used by  test_get_dbvals
+     *
+     * @return void
+     */
     public function setup() {
+        set_config('clientid', 'eUnity_moodle_titus_test', 'local_linkproxy');
         global $DB;
         $this->setAdminUser();
         $proxy = new local_linkproxy\service\proxy();
         $accessionnumber = '469793H052909';
-        $linkhash = $proxy->upsert_link('', $accessionnumber);
+        $linkhash = $proxy->upsert_link($accessionnumber);
         $this->linkrecord = $DB->get_record('local_linkproxy', ['linkhash' => $linkhash]);
     }
 }

@@ -25,6 +25,10 @@ namespace local_linkproxy\service;
 
 defined('MOODLE_INTERNAL') || die;
 
+/**
+ * Mainly for adding new functionality to
+ * children at a later date.
+ */
 abstract class base_service {
 
     public static function instance() : base_service {

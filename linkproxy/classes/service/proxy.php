@@ -48,11 +48,11 @@ class proxy extends base_service {
      * return the hash that will be used in the link by
      * the get_redirect function. If it is an existing
      * link pass in the hash and update the record.
-     * @param string $hash hashtring from existing record
      * @param string $an //accession number
+     * @param string $hash hashtring from existing record
      * @return string
      */
-    public function upsert_link(string $hash = '', string $an) {
+    public function upsert_link(string $an, string $hash = '') {
         global $DB, $COURSE;
         $coursecontext = \context_course::instance($COURSE->id);
         if (!has_capability('moodle/course:manageactivities', $coursecontext)) {
@@ -104,8 +104,14 @@ class proxy extends base_service {
         if (!$record = $DB->get_record('local_linkproxy', ['linkhash' => $hash])) {
             redirect('https://eunity.rvc.ac.uk/e/viewer');
         }
+
         $token = $this->get_token();
-        $image = $this->get_imagelink($token, $record);
+        if (array_key_exists('error', $token)) {
+          echo($token['error'].PHP_EOL);
+          die();
+        } else {
+           $image = $this->get_imagelink($token, $record);
+        }
         if (isset($image->link)) {
             redirect($image->link);
         } else {
@@ -119,8 +125,8 @@ class proxy extends base_service {
      * perform a redirect to the eUnity image viewer.
      *
      * @param array $token
-     * @param object $image
-     * @return void
+     * @param \stdClass $record
+     * @return \stdClass
      */
     public function get_imagelink(array $token, \stdClass $record) {
         global $USER;
@@ -150,15 +156,14 @@ class proxy extends base_service {
      * @return string
      */
     public function get_token() : array {
-        $identityproviderurl = get_config('local_linkproxy', 'identityproviderurl');
-        $sharedsecretkey = get_config('local_linkproxy', 'sharedsecretkey');
         $params = [
             'client_id'     => get_config('local_linkproxy', 'clientid'),
-            'client_secret' => $sharedsecretkey,
+            'client_secret' => get_config('local_linkproxy', 'sharedsecretkey'),
             'scope' => get_config('local_linkproxy', 'scope'),
             'grant_type'    => self::GRANT_TYPE
         ];
         $curl = new curl();
+        $identityproviderurl = get_config('local_linkproxy', 'identityproviderurl');
         $data = $curl->post($identityproviderurl, $params);
         return json_decode($data, true);
     }
