@@ -2,18 +2,18 @@
 
 Moodle Local plugin to return a hash to conceal url of links and
 redirect link clicks to the actual URL. Depends on the atto
-customlink button plugin for the calls to generate and return
+eunitylink button plugin for the calls to generate and return
 the hash and create the link
 
-Copy the customlink code to moodle\lib\editor\atto\plugins
+Copy the eunitylink code to moodle\lib\editor\atto\plugins
 Copy the linkproxy code to moodle\locl\linkproxy.
 
 Login as admin and go to the admin menu. Go through the standard plugin install procedure.
 
 After installation go to http://yourmoodle.org/admin/settings.php?section=editorsettingsatto
 add a line in Toolbar config in the form
-customlink = custom link
-Check in an instance of Atto that you have a new button indicated by a + symbol for this plugin.
+eUnity = eunitylink
+Check in an instance of Atto that you have a new button indicated by a eUnity logo symbol for this plugin.
 
 Confirm that the button icon is visible to teachers and not visible to students
 

@@ -27,7 +27,7 @@ namespace atto_eunitylink\privacy;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Privacy Subsystem for atto_customink implementing null_provider.
+ * Privacy Subsystem for atto_eunitylink implementing null_provider.
  *
  * @copyright  2019 Titus Learning by Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

@@ -44,7 +44,7 @@ class proxy extends base_service {
 
     /**
      * Given an accession number
-     * taken from the atto_customlink button processing
+     * taken from the atto_eunitylink button processing
      * return the hash that will be used in the link by
      * the get_redirect function. If it is an existing
      * link pass in the hash and update the record.

@@ -41,7 +41,7 @@ class actions {
 
     /**
      * Get hash data from db table
-     * Called via Ajax when customlink
+     * Called via Ajax when eunitylink
      * is clicked in atto text area.
      *
      * @return \stdClass
