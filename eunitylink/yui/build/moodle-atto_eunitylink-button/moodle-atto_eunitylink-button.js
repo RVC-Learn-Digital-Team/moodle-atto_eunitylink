@@ -48,7 +48,7 @@ var COMPONENTNAME = 'atto_eunitylink',
                         '<label for="{{CSS.ACCESSIONNUMBER}}">' +
                             '{{get_string "accessionnumber" component}}</label>' +
                             '<input class="form-control fullwidth {{CSS.ACCESSIONNUMBER}}"' +
-                            ' name="{{CSS.ACCESSIONNUMBER}}" id="{{CSS.ACCESSIONNUMBER}}"' +
+                            ' name="{{CSS.ACCESSIONNUMBER}}" id="{{CSS.ACCESSIONNUMBER}}" type="text"' +
                             ' value="{{accessionnumber}}" size="32"/>' +
                   '</div>' +
                 '<div class="mdl-align">' +
