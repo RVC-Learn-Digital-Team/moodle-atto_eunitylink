@@ -181,7 +181,8 @@ var COMPONENTNAME = 'atto_eunitylink',
                 // Create a configuration object for the synchronous transaction.
                 var params = {
                     action: 'get_dbvals',
-                    hash: hash
+                    hash: hash,
+                    contextid: M.cfg.contextid
                 };
                 var cfg = {
                     sync: true,
@@ -292,7 +293,8 @@ var COMPONENTNAME = 'atto_eunitylink',
                 var params = {
                     action: 'upsert_link',
                     an: accessionnumber,
-                    hash: _linkHash
+                    hash: _linkHash,
+                    contextid: M.cfg.contextid
                 };
                 var cfg = {
                     sync: true,
