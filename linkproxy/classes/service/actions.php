@@ -47,6 +47,11 @@ class actions {
      * @return \stdClass
      */
     public static function get_dbvals() {
+        $contextid = optional_param('contextid', '', PARAM_INT);
+        $context = \context::instance_by_id($contextid);
+        if (!has_capability('moodle/course:manageactivities', $context)) {
+            return get_string('nolinkpermission', 'local_linkproxy');
+        }
         $proxy = new proxy();
         $hash = required_param('hash', PARAM_TEXT);
         $result = $proxy->get_dbvals($hash);
@@ -60,6 +65,11 @@ class actions {
      *  @return \stdClass
      */
     public static function upsert_link() {
+        $contextid = optional_param('contextid', '', PARAM_INT);
+        $context = \context::instance_by_id($contextid);
+        if (!has_capability('moodle/course:manageactivities', $context)) {
+            return get_string('nolinkpermission', 'local_linkproxy');
+        }
         $proxy = new proxy();
         $linkhash = optional_param('hash', '', PARAM_TEXT);
         $an = required_param('an', PARAM_TEXT);
@@ -67,13 +77,13 @@ class actions {
 
         return $hash;
     }
-  /**
-   * Get existing link based on hash from
-   * url then redirect to a a new tab
-   * showing the eUnity viewer
-   *
-   * @return void
-   */
+    /**
+     * Get existing link based on hash from
+     * url then redirect to a a new tab
+     * showing the eUnity viewer
+     *
+     * @return void
+     */
     public static function get_link() {
         $proxy = new proxy();
         $hash = required_param('hash', PARAM_TEXT);

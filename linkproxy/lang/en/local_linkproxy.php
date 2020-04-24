@@ -37,9 +37,8 @@ $string['clientid'] = 'Clientid';
 $string['clientid_text'] = 'Used to get token';
 $string['scope'] = 'Scope';
 $string['scope_text'] = 'Used to get token';
-
-
-
+$string['linkproxy:hashlink'] = 'Create hashlink';
+$string['nolinkpermission'] = 'No permission to create links';
 
 
 

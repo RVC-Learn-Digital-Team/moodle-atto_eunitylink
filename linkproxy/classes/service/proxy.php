@@ -53,11 +53,7 @@ class proxy extends base_service {
      * @return string
      */
     public function upsert_link(string $an, string $hash = '') {
-        global $DB, $COURSE;
-        $coursecontext = \context_course::instance($COURSE->id);
-        if (!has_capability('moodle/course:manageactivities', $coursecontext)) {
-            return false;
-        }
+        global $DB;
         if ($hash) {
             $id = $DB->get_field('local_linkproxy', 'id', ['linkhash' => $hash]);
             $DB->update_record('local_linkproxy', ['id' => $id, 'accessionnumber' => $an]);
@@ -79,11 +75,7 @@ class proxy extends base_service {
      * @return object
      */
     public function get_dbvals(string $hash) : \stdClass {
-        global $DB, $COURSE;
-        $coursecontext = \context_course::instance($COURSE->id);
-        if (!has_capability('moodle/course:manageactivities', $coursecontext)) {
-            return false;
-        }
+        global $DB;
         $result = $DB->get_record('local_linkproxy', ['linkhash' => $hash]);
         return $result ?: (object) [];
 
