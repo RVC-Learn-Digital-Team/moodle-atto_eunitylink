@@ -23,7 +23,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2020042100;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2020050500;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2018112800;        // Requires at least this Moodle version.
 $plugin->component = 'atto_eunitylink';  // Full name of the plugin (used for diagnostics).
 $plugin->maturity = MATURITY_BETA;
