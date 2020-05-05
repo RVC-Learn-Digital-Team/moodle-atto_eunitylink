@@ -39,24 +39,25 @@ var COMPONENTNAME = 'atto_eunitylink',
     },
     // The structure of the dialog.
     TEMPLATE = '' +
-            '<form class="atto_form">' +
-                    '<div class="m-b-1">' +
-                        '<label for="{{CSS.LINKTEXT}}">{{get_string "linktext" component}}</label>' +
-                        '<input class="form-control fullwidth url {{CSS.LINKTEXT}}" type="url" ' +
-                        'id="{{CSS.LINKTEXT}}" value="{{selectedtext}}"  size="32"/>' +
-                     '<div class="m-b-1">' +
-                        '<label for="{{CSS.ACCESSIONNUMBER}}">' +
-                            '{{get_string "accessionnumber" component}}</label>' +
-                            '<input class="form-control fullwidth {{CSS.ACCESSIONNUMBER}}"' +
-                            ' name="{{CSS.ACCESSIONNUMBER}}" id="{{CSS.ACCESSIONNUMBER}}" type="text"' +
-                            ' value="{{accessionnumber}}" size="32"/>' +
-                  '</div>' +
-                '<div class="mdl-align">' +
-                    '<br/>' +
-                    '<button type="submit" title = {{get_string "createlink" component}}' +
-                    ' class="btn btn-default submit">{{get_string "createlink" component}}</button>' +
-                '</div>' +
-            '</form>';
+        '<form class="atto_form">' +
+            '<div class="m-b-1 form-group">' +
+                '<label for="{{CSS.LINKTEXT}}">{{get_string "linktext" component}}</label>' +
+                '<input class="form-control fullwidth {{CSS.LINKTEXT}}" type="text" ' +
+                'id="{{CSS.LINKTEXT}}" value="{{selectedtext}}"  size="32"/>' +
+            '</div>' +
+            '<div class="m-b-1 form-group">' +
+                '<label for="{{CSS.ACCESSIONNUMBER}}">' +
+                    '{{get_string "accessionnumber" component}}</label>' +
+                    '<input class="form-control fullwidth {{CSS.ACCESSIONNUMBER}}"' +
+                    ' name="{{CSS.ACCESSIONNUMBER}}" id="{{CSS.ACCESSIONNUMBER}}" type="text"' +
+                    ' value="{{accessionnumber}}" size="32"/>' +
+            '</div>' +
+            '<div class="mdl-align">' +
+                '<br/>' +
+                '<button type="submit" title = {{get_string "createlink" component}}' +
+                ' class="btn btn-default submit">{{get_string "createlink" component}}</button>' +
+            '</div>' +
+        '</form>';
         Y.namespace('M.atto_eunitylink').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
 
         /**
