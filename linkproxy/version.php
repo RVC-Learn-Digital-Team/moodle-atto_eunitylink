@@ -24,11 +24,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_linkproxy';
-$plugin->release = '1.3.0';
-$plugin->version =  2020042100;
+$plugin->release = '1.3.1';
+$plugin->version =  2020112200;
 $plugin->requires = 2018051700;
 $plugin->maturity = MATURITY_STABLE;
-$plugin->dependencies = [
-  'local_tlcore' => ANY_VERSION
-];
 

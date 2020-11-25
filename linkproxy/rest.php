@@ -21,7 +21,7 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use local_tlcore\output\rest_renderer;
+use local_linkproxy\output\rest_renderer;
 use local_linkproxy\service\actions;
 
 require_once(__DIR__.'/../../config.php');
