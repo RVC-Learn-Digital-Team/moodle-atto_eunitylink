@@ -14,20 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Code that is executed before the tables and data are dropped during the plugin uninstallation.
+ * Atto enunitylink button plugin version file.
  *
- * @package     local_linkproxy
- * @category    upgrade
- * @copyright   2019 Marcus Green <marcusgreen@tituslearning.com>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    atto_eunitylink
+ * @copyright  2020 Titus Learning by Marcus Green
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * Custom uninstallation procedure.
- */
-function xmldb_local_linkproxy_uninstall() {
-
-    return true;
-}
+$plugin->version   = 2025052800;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2018112800;        // Requires at least this Moodle version.
+$plugin->component = 'atto_eunitylink';  // Full name of the plugin (used for diagnostics).
+$plugin->maturity = MATURITY_BETA;
+$plugin->dependencies = ['local_linkproxy' => ANY_VERSION];
